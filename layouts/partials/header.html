@@ -1,6 +1,9 @@
 <div class="Header">
   <a href="{{ .Site.BaseURL }}">
 	<div class="Title center">
+		{{ with .Site.Params.logo }}
+		<img alt="{{ .Site.Title }} Logo" src="{{ .Site.Params.logo }}" height="140" />
+		{{ end }}
 		<span class="text">{{ .Site.Title }}</span>
 		<span class="subtext"></span>
 	</div>
