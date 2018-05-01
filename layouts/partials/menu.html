@@ -1,5 +1,8 @@
 <div class="Sidebar">
 	<div class="Menu">
+		<div class="item">
+			<a href="{{ .Site.BaseURL }}">Home</a>
+		</div>
 		{{ range .Site.Pages }}
 			{{ if .Params.menu }}
 				<div class="item">
