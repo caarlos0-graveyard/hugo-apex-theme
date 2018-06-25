@@ -1,3 +1,10 @@
-<div class="Footer">{{ .Site.Copyright }}</div>
+<div class="Footer">
+	{{- with .GitInfo -}}
+		<small>
+			Last updated by {{ .AuthorName }} on {{ .AuthorDate.Format "January 2, 2006" }}.
+		</small>
+	{{- end -}}
+	<p>{{ .Site.Copyright }}</p>
+</div>
 <script src="{{ .Site.BaseURL }}js/index.js"></script>
 {{ template "_internal/google_analytics.html" . }}
