@@ -2,5 +2,9 @@
 	<div class="Page" id="{{ .Slug }}">
 		<h1>{{ .Title }}</h1>
 		{{ .Content }}
+
+		{{- with .GitInfo -}}
+		<blockquote><p>Last updated by {{ .AuthorName }} on {{ .AuthorDate.Format "January 2, 2006" }}.</p></blockquote>
+		{{- end -}}
 	</div>
 {{ end }}
