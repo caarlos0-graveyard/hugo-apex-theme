@@ -124,7 +124,7 @@ pre {
   padding: 30px;
   border-radius: 2px;
   overflow-x: auto;
-  font: "Source Code Pro", Menlo, monospace;
+  font-family: "Source Code Pro","SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   font-size: .8em;
   line-height: 1.5em;
   -webkit-font-smoothing: antialiased;
@@ -138,14 +138,19 @@ blockquote {
 }
 
 li > code,
-p > code {
+p > code,
+td > code {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  box-sizing: border-box;
   border: 1px solid #DEE2E6;
-  font-size: 0.75rem;
-  padding: 3px 10px;
+  font-size: 85%;
+  line-height: 1.5;
+  font-weight: 300;
+  padding: 0.2em 0.4em;
   border-radius: 3px;
   white-space: nowrap;
-  font-weight: 600;
-  font-family: inherit;
+  font-family: "Source Code Pro","SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -316,9 +321,8 @@ details > p {
 }
 
 .Footer {
-  padding-top: 30px;
-  margin-bottom: 100px;
-  border-top: 1px solid var(--fg);
+  margin: 50px 0;
+  border-top: 1px solid var(--grape);
   height: 100px;
 }
 
@@ -341,4 +345,35 @@ details > p {
   .Content {
     width: 100%;
   }
+}
+
+
+.Content table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.Content table th {
+  font-weight: 600;
+}
+
+.Content table th,.Content table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.Content table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.Content table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.Content table img {
+  background-color: transparent;
 }
