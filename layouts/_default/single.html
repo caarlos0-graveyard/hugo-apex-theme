@@ -3,8 +3,13 @@
 		<h1>{{ .Title }}</h1>
 		{{ .Content }}
 
-		{{- with .GitInfo -}}
-		<blockquote><p>Last updated by {{ .AuthorName }} on {{ .AuthorDate.Format "January 2, 2006" }}.</p></blockquote>
-		{{- end -}}
+		<blockquote>
+			<p>
+				{{- with .GitInfo -}}
+				Last updated by {{ .AuthorName }} on {{ .AuthorDate.Format "January 2, 2006" }}.
+				{{- end }}
+				<a href="{{ .Site.Params.ghdocsrepo }}/content/{{ .File.Path }}">Improve this page</a>.
+			</p>
+		</blockquote>
 	</div>
 {{ end }}
